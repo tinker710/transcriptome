@@ -1,0 +1,70 @@
+species: rice
+
+seq_info:
+ type: RNA-seq
+ stranded: yes
+ mode: PE
+ replicate: 3
+
+path: /home/galaxy/lee/wanghongliang/PCW0005/raw
+Rscript_path: /home/galaxy/lee/wanghongliang/PCW0005/script
+gene_anno: /home/galaxy/lee/database/rice/gene_annotation
+
+fold_change:
+ - 2
+
+adapter: /home/galaxy/miniconda3/share/trimmomatic-0.38-0/adapters/TruSeq3-PE-2.fa
+
+cpu: 30
+
+index: /home/galaxy/lee/database/rice/Oryza_sativa
+
+strandness_hisat2: RF
+strandness_htseq: reverse
+
+gtf: /home/galaxy/lee/database/rice/Oryza_sativa.IRGSP-1.0.41.gtf
+gff3: /home/galaxy/lee/database/rice/Oryza_sativa.IRGSP-1.0.41.gff3
+
+design_table: /home/galaxy/lee/wanghongliang/PCW0005/design_table
+
+gene_length: /home/galaxy/lee/pat/script/tair10_1_merged_exons_length.tsv
+
+samples:
+ - ABA_NIP0_1
+ - ABA_NIP0_2
+ - ABA_NIP0_3
+ - ABA_NIP1_1
+ - ABA_NIP1_2
+ - ABA_NIP1_3
+ - ABA_NIP3_1
+ - ABA_NIP3_2
+ - ABA_NIP3_3
+ - CK_NIP0_1
+ - CK_NIP0_2
+ - CK_NIP0_3
+ - CK_NIP1_1
+ - CK_NIP1_2
+ - CK_NIP1_3
+ - CK_NIP3_1
+ - CK_NIP3_2
+ - CK_NIP3_3
+
+groups:
+ - ABA_NIP0
+ - ABA_NIP0
+ - ABA_NIP0
+ - ABA_NIP1
+ - ABA_NIP1
+ - ABA_NIP1
+ - ABA_NIP3
+ - ABA_NIP3
+ - ABA_NIP3
+ - CK_NIP0
+ - CK_NIP0
+ - CK_NIP0
+ - CK_NIP1
+ - CK_NIP1
+ - CK_NIP1
+ - CK_NIP3
+ - CK_NIP3
+ - CK_NIP3
