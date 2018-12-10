@@ -1,0 +1,79 @@
+species: arabidopsis
+
+seq_info:
+ type: RNA-seq
+ stranded: yes
+ mode: PE
+ replicate: 3
+
+path: /home/galaxy/lee/pat/AS/bam
+Rscript_path: /home/galaxy/lee/pat/AS/script
+gene_anno: /home/galaxy/lee/database/protein/gene_annotation
+
+fold_change:
+ - 2
+
+adapter: /home/galaxy/miniconda3/share/trimmomatic-0.38-0/adapters/TruSeq3-PE-2.fa
+
+cpu: 30
+
+index: /home/galaxy/lee/database/genome_tran
+
+strandness_hisat2: RF
+strandness_htseq: reverse
+
+gtf: /home/galaxy/lee/database/Araport11_GFF3_genes_transposons.201606.gtf
+
+design_table: /home/galaxy/lee/pat/AS/design_table1
+
+gene_length: /home/galaxy/lee/pat/script/tair10_1_merged_exons_length.tsv
+
+samples:
+ - c1_1
+ - c1_2
+ - c1_3
+ - c6_1
+ - c6_2
+ - c6_3
+ - cA0_1
+ - cA0_2
+ - cA0_3
+ - cA1_1
+ - cA1_2
+ - cA1_3
+ - cA6_1
+ - cA6_2
+ - cA6_3
+ - cN0_1
+ - cN0_2
+ - cN0_3
+ - cN1_1
+ - cN1_2
+ - cN1_3
+ - cN6_1
+ - cN6_2
+ - cN6_3
+ - p1_1
+ - p1_2
+ - p1_3
+ - p6_1
+ - p6_2
+ - p6_3
+ - pA0_1
+ - pA0_2
+ - pA0_3
+ - pA1_1
+ - pA1_2
+ - pA1_3
+ - pA6_1
+ - pA6_2
+ - pA6_3
+ - pN0_1
+ - pN0_2
+ - pN0_3
+ - pN1_1
+ - pN1_2
+ - pN1_3
+ - pN6_1
+ - pN6_2
+ - pN6_3

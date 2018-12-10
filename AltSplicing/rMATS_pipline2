@@ -1,0 +1,20 @@
+configfile: "config.yaml"
+
+rule all:
+	input:
+		'rmats/rmats.sh',
+
+rule rmats_arrange:
+	input:
+		'script/rmats_re.py'
+	output:
+		'rmats/rmats.sh'
+	params:
+		input_path='/home/galaxy/lee/pat/AS/bam/',
+		gtf=config["gtf"],
+		Rscript=config['Rscript_path'],
+		design_table=config['design_table'],
+		output_path='/home/galaxy/lee/pat/AS/rmats/'
+	shell:
+		'python {params.Rscript}/rmats_re.py {params.input_path} {output} {params.design_table} {params.gtf} {params.output_path}'
+
