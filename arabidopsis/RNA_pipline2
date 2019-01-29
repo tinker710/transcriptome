@@ -56,9 +56,10 @@ rule DEG_files:
 		'table/DEG_test'
 	params:
 		config_file='config.yaml',
-		Rscript = config['Rscript_path']
+		Rscript = config['Rscript_path'],
+		output_path = "/home/galaxy/lee/pengcheng/table/"
 	shell:
-		'Rscript {params.Rscript}/DEG_files.R {params.config_file} {input} {output}'
+		'Rscript {params.Rscript}/DEG_files.R {params.config_file} {input} {output} {params.output_path}'
 
 rule enrichment:
 	input:
