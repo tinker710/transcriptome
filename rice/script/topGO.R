@@ -5,7 +5,7 @@ path <- "/home/galaxy/lee/wanghongliang/PCW0005/table/ABA_NIP0_vs_CK_NIP0/"
 type="up"
 geneID2GO <- readMappings(file="/home/galaxy/lee/database/rice/GO_enrichment/rice_GO.txt")
 background <- read.table("/home/galaxy/lee/database/rice/GO_enrichment/rice_background.txt",stringsAsFactors = F )$V1
-myGenes <- read.table(paste0(path,"up.xls"))$V1
+myGenes <- read.delim(paste0(path,paste0(type,".xls")))$Gene
 geneList <- factor(as.integer(background %in% myGenes))
 names(geneList) <- background
 GOdata <- new("topGOdata",ontology='BP',allGenes=geneList,annot=annFUN.gene2GO,gene2GO=geneID2GO)
@@ -18,7 +18,7 @@ r <- r[which(r$fdr < 0.1),]
 genes1=""
 list1 <- c()
 for (go_terms in r$GO.ID){
-  genes <- genesInTerm(GOdata,go_terms)[[1]];
+  genes <-myGenes[myGenes %in% genesInTerm(GOdata,go_terms)[[1]]];
   for (gene1 in genes){
     genes1=paste(genes1,gene1,"/",sep="")
   }
